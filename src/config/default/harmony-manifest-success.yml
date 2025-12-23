@@ -4,7 +4,7 @@
 
 
 project: pic32cz-bootloader
-creation_date: 2025-12-23T14:26:55.451-06:00[America/Chicago]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2025-12-23T15:11:10.233-06:00[America/Chicago]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Mac OS X
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.6.3
@@ -15,6 +15,7 @@ compiler: XC32 5.00
 
 modules:
     - {name: "core", version: "v3.15.2"}
+    - {name: "csp", version: "v3.25.0"}
     - {name: "filex", version: "v6.4.0_rel"}
     - {name: "CMSIS_5", version: "5.9.0"}
     - {name: "littlefs", version: "v2.11.0"}
