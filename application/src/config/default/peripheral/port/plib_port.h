@@ -65,6 +65,42 @@
 // *****************************************************************************
 // *****************************************************************************
 
+/*** Macros for SW1 pin ***/
+#define SW1_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = ((uint32_t)1U << 23U))
+#define SW1_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = ((uint32_t)1U << 23U))
+#define SW1_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = ((uint32_t)1U << 23U))
+#define SW1_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = ((uint32_t)1U << 23U))
+#define SW1_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = ((uint32_t)1U << 23U))
+#define SW1_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 23U)) & 0x01U)
+#define SW1_PIN                  PORT_PIN_PC23
+
+/*** Macros for SW0 pin ***/
+#define SW0_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 24U))
+#define SW0_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 24U))
+#define SW0_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 24U))
+#define SW0_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 24U))
+#define SW0_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 24U))
+#define SW0_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 24U)) & 0x01U)
+#define SW0_PIN                  PORT_PIN_PB24
+
+/*** Macros for LED0 pin ***/
+#define LED0_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 21U))
+#define LED0_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 21U))
+#define LED0_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 21U))
+#define LED0_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 21U))
+#define LED0_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 21U))
+#define LED0_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 21U)) & 0x01U)
+#define LED0_PIN                  PORT_PIN_PB21
+
+/*** Macros for LED1 pin ***/
+#define LED1_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 22U))
+#define LED1_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 22U))
+#define LED1_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 22U))
+#define LED1_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 22U))
+#define LED1_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 22U))
+#define LED1_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 22U)) & 0x01U)
+#define LED1_PIN                  PORT_PIN_PB22
+
 // *****************************************************************************
 /* PORT Group
 
@@ -638,6 +674,40 @@ typedef enum
 // Section: Generated API based on pin configurations done in Pin Manager
 // *****************************************************************************
 // *****************************************************************************
+// *****************************************************************************
+/* Function:
+    void PORT_Initialize(void)
+
+  Summary:
+    Initializes the PORT Library.
+
+  Description:
+    This function initializes all ports and pins as configured in the
+    MHC Pin Manager.
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+
+    PORT_Initialize();
+
+    </code>
+
+  Remarks:
+    The function should be called once before calling any other PORTS PLIB
+    functions.
+*/
+
+void PORT_Initialize(void);
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: PORT APIs which operates on multiple pins of a group
