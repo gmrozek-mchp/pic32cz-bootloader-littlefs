@@ -43,6 +43,24 @@ int main ( void )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
+
+        if( !SW0_Get() )
+        {
+            LED0_Clear();
+        }
+        else
+        {
+            LED0_Set();
+        }
+
+        if( !SW1_Get() )
+        {
+            LED1_Clear();
+        }
+        else
+        {
+            LED1_Set();
+        }
     }
 
     /* Execution should not come here during normal operation */
