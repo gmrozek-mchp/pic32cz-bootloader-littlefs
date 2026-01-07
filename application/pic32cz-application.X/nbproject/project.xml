@@ -7,7 +7,9 @@
             <creation-uuid>67d14389-478b-461f-bcb4-e3b979eef8de</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
-            <make-dep-projects/>
+            <make-dep-projects>
+                <make-dep-project>../../bootloader/pic32cz-bootloader.X</make-dep-project>
+            </make-dep-projects>
             <sourceRootList/>
             <confList>
                 <confElem>
