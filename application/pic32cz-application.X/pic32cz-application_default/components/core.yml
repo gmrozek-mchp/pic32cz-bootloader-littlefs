@@ -502,4 +502,14 @@ data:
           type: Dynamic
         type: Values
       type: String
+    VTABLE_MEM_REGION:
+      attributes:
+        id: VTABLE_MEM_REGION
+      children:
+      - children:
+        - attributes:
+            value: FCR_PFM
+          type: User
+        type: Values
+      type: Combo
   userData: {}
