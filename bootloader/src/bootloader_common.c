@@ -53,7 +53,7 @@
 /* Bootloader Major and Minor version sent for a Read Version command (MAJOR.MINOR)*/
 #define BTL_MAJOR_VERSION       3U
 #define BTL_MINOR_VERSION       7U
-#define ASM_VECTOR              asm("bx %0"::"r" (reset_vector))
+#define ASM_VECTOR              __asm__("bx %0"::"r" (reset_vector))
 
 // *****************************************************************************
 // *****************************************************************************

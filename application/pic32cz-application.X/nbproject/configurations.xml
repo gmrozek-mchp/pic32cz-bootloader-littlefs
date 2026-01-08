@@ -222,8 +222,8 @@
         <platform>4</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CZ-CA90_DFP" vendor="Microchip" version="1.7.168"/>
         <pack name="CMSIS" vendor="ARM" version="6.2.0"/>
+        <pack name="PIC32CZ-CA90_DFP" vendor="Microchip" version="1.7.168"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

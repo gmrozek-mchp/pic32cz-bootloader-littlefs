@@ -30,6 +30,8 @@
 #include "app.h"
 #include "peripheral/port/plib_port.h"
 
+#include "bootloader_common.h"
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -130,14 +132,7 @@ void APP_Tasks ( void )
 
         case APP_STATE_SERVICE_TASKS:
         {
-            if( !SW0_Get() )
-            {
-                LED0_Clear();
-            }
-            else
-            {
-                LED0_Set();
-            }
+            run_Application( APP_START_ADDRESS );
 
             break;
         }
