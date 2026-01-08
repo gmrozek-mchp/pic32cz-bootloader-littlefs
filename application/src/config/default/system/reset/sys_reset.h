@@ -1,4 +1,21 @@
-// DOM-IGNORE-BEGIN
+/*******************************************************************************
+  RESET Service
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    sys_reset.h
+
+  Summary:
+    RESET Service Header File
+
+  Description:
+    This library provides an interface to control and interact with RESET
+    System Service.
+
+*******************************************************************************/
+
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -21,41 +38,53 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+
+#ifndef SYS_RESET_H
+#define SYS_RESET_H
+
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+    extern "C" {
+
+#endif
 // DOM-IGNORE-END
 
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <stdbool.h>
-#include "device.h" /* for ARM CMSIS __BKPT() */
+// *****************************************************************************
+/* Function:
+    void SYS_RESET_SoftwareReset( void )
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+  Summary:
+    Triggers a software reset.
 
+  Description:
+    This function triggers a software Reset.
 
-/* MISRAC 2023 deviation block start */
-/* MISRA C-2023 Rule 21.2 deviated twice.  Deviation record ID -  H3_MISRAC_2023_R_21_2_DR_1 */
-/* Harmony specific
- * We implement only the syscalls we want over the stubs provided by libpic32c
- */
-extern void _exit(int status);
+  PreCondition:
+    None.
 
-void _exit(int status)
-{
-    /* Software breakpoint */
-#ifdef __DEBUG
-    __BKPT(0);
-#endif
+  Parameters:
+    None.
 
-    /* halt CPU */
-    while (true)
-    {
+  Returns:
+    None.
+
+  Example:
+    <code>
+    
+    SYS_RESET_SoftwareReset();
+    </code>
+
+  Remarks:
+    None.
+*/
+void SYS_RESET_SoftwareReset( void );
+
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
     }
-}
 
-#ifdef __cplusplus
-}
 #endif
-
-/* MISRAC 2023 deviation block end */
+// DOM-IGNORE-END
+#endif // SYS_RESET_H

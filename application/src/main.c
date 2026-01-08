@@ -24,8 +24,13 @@
 
 #include <stddef.h>                     // Defines NULL
 #include <stdbool.h>                    // Defines true
+#include <stdint.h>
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
+
+#define BTL_TRIGGER_RAM_START   (0x20020000U)
+
+static volatile uint32_t magic __attribute__((persistent,address(BTL_TRIGGER_RAM_START)));
 
 
 // *****************************************************************************
@@ -47,6 +52,7 @@ int main ( void )
         if( !SW0_Get() )
         {
             LED0_Clear();
+            magic = 0xDEADBEEF;
         }
         else
         {
@@ -56,6 +62,7 @@ int main ( void )
         if( !SW1_Get() )
         {
             LED1_Clear();
+            SYS_RESET_SoftwareReset();
         }
         else
         {

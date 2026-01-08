@@ -1,5 +1,22 @@
-// DOM-IGNORE-BEGIN
 /*******************************************************************************
+  Reset System Service Source File
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    sys_reset.c
+
+  Summary:
+    Reset System Service source file.
+
+  Description:
+    This source file contains the function implementations of the APIs
+    supported by the module.
+*******************************************************************************/
+
+//DOM-IGNORE-BEGIN
+/******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
@@ -21,41 +38,17 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-// DOM-IGNORE-END
+//DOM-IGNORE-END
 
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <stdbool.h>
-#include "device.h" /* for ARM CMSIS __BKPT() */
+#include "device.h"
+#include "system/reset/sys_reset.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-
-/* MISRAC 2023 deviation block start */
-/* MISRA C-2023 Rule 21.2 deviated twice.  Deviation record ID -  H3_MISRAC_2023_R_21_2_DR_1 */
-/* Harmony specific
- * We implement only the syscalls we want over the stubs provided by libpic32c
- */
-extern void _exit(int status);
-
-void _exit(int status)
+void __attribute__((noreturn)) SYS_RESET_SoftwareReset(void)
 {
-    /* Software breakpoint */
-#ifdef __DEBUG
-    __BKPT(0);
-#endif
-
-    /* halt CPU */
-    while (true)
-    {
-    }
+ 
+    NVIC_SystemReset();
 }
 
-#ifdef __cplusplus
-}
-#endif
-
-/* MISRAC 2023 deviation block end */
+/*******************************************************************************
+ End of File
+*/

@@ -8,6 +8,10 @@ dependency:
   name: core
   type: module
   version: ''
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.25.0
 customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
 data:
   attachments: {}
@@ -502,4 +506,16 @@ data:
           type: Dynamic
         type: Values
       type: String
-  userData: {}
+  userData:
+    children:
+    - attributes:
+        canvasHeight: '0'
+        canvasWidth: '0'
+      type: GraphSettings
+    - children:
+      - attributes:
+          id: profile0
+          name: Main
+        type: Profile
+      type: PowerProfiles
+    type: UserData

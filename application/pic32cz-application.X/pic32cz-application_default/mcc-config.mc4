@@ -5,6 +5,7 @@ device: PIC32CZ8110CA90208
 deviceLibrary: {}
 groupModules: []
 modules:
+- HarmonyCore
 - cmsis
 - core
 - dfp
@@ -13,7 +14,7 @@ generatedFileHashHistoryMap:
 - file: ../src/config/default/PIC32CZ8110CA90208.ld
   hash: 188ba19d8da9dfc895bf22b4d46d9f87b8ff0cdda50f619a3021b36e144abe82
 - file: ../src/config/default/definitions.h
-  hash: dfe2502ae6ae2a884d50f398a7c0986260723672fc0170a169d5e75c9a2c3e4f
+  hash: dd37df48a7976e2fa4bf2267002216730ec78f2ddd76f7363def40e49051b1c1
 - file: ../src/config/default/device.h
   hash: dc53d76f68355827fd146558b23bffb156697207880ccc4cc8946bf55258fbc8
 - file: ../src/config/default/device_cache.h
@@ -21,15 +22,15 @@ generatedFileHashHistoryMap:
 - file: ../src/config/default/device_vectors.h
   hash: 43b76ff4c76cd3820879ae62ff4d5d98f0cc9e44e121fe075be8997f0ecd00ff
 - file: ../src/config/default/exceptions.c
-  hash: de00e84d46e0d8933ee2fae9d699e08456443d4f80ac78f87edada9c35a9d15f
+  hash: d1fcd7158950bb6ce6461d093cfa2ab341af3e6ea0337a936aa3ee9da98c6e55
 - file: ../src/config/default/initialization.c
-  hash: 8e2a57a1abf287a2fea5b4e09904ff1f918a9ea833f711f49e0777f76daa4ba2
+  hash: e13c11ae9d292c44ec29f880b594cb144f791927db92d908fe7f6aaaef512c9c
 - file: ../src/config/default/interrupts.c
-  hash: de00f24de46ad89304be437140a3738245bb3b3494cb3e126b7e7089ad760656
+  hash: 5b99368a029c795a04457cfd556f514216ec06dc4017fcdf9180f8313283f4ca
 - file: ../src/config/default/interrupts.h
   hash: 01546cb861902ba539183210df560edb11c3bf3b22aba3c5031a32798d0754ea
 - file: ../src/config/default/libc_syscalls.c
-  hash: 88bb2e34c939601b5b7ad076556e3ee0fcedf388436b8cddb6d6fd3e9d07472f
+  hash: c9afc1b1257829415a1a6746ce3744f0a768b339d59fff2ab3ca1fab58b2a916
 - file: ../src/config/default/peripheral/clock/plib_clock.c
   hash: d2316e402ea89865f70c1dceedf190fe09d078a2d25803f3a267563d22e63c84
 - file: ../src/config/default/peripheral/clock/plib_clock.h
@@ -49,13 +50,41 @@ generatedFileHashHistoryMap:
 - file: ../src/config/default/pin_configurations.csv
   hash: 2046e0cd4c226dc9733aa8ee7e7439f7662ca91f4ddb7cdcff38da3d997d1d35
 - file: ../src/config/default/startup_xc32.c
-  hash: 52b7253e9dc7cad1488f059f88b4fcd9dfdb06f7e1b61dfb7aa6fe7d606593a0
+  hash: c53a1eb23a271545c1df27ef37a9536ade2e9738d3da76008ecf1bc8dd41a244
 - file: ../src/config/default/stdio/xc32_monitor.c
   hash: 858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a
+- file: ../src/config/default/system/cache/sys_cache.c
+  hash: 5f8c30e8077b915a4c4ff0515354b2877dc74c3236f307bdc1132307269fbf86
+- file: ../src/config/default/system/cache/sys_cache.h
+  hash: b4b3a4e7434759c9bbcd3c6a0ab97558eb2a007f083a4eb76dbedcb2e2c3d86b
+- file: ../src/config/default/system/reset/sys_reset.c
+  hash: e671888007ee4e0355beae1e361ff894dc2bc4fa0a4614d6975b18c5ce057181
+- file: ../src/config/default/system/reset/sys_reset.h
+  hash: 962efce739387d25aacb5dc3aa90e90f216a478bcf19b57237540fd72bce2748
 - file: ../src/config/default/toolchain_specifics.h
   hash: 406ef48ae415706beb0796977cab09342077f7b1efc3f24767bd97bbd5e5a433
 - file: ../src/main.c
   hash: d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5
+- file: ../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h
+  hash: 6cdb5b324f2fd1bb5b2f47298ba6e6777e735d7cad3bb8d942cd36e2c6e65328
+- file: ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h
+  hash: d074534d7106cec83474b3b0a897bd2553e1a8895ecbd54f4f4fb25928066eee
+- file: ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h
+  hash: 11b39b96ddc1125124762b3423a77b90dd40ea5b4582a3513830245046b24311
+- file: ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h
+  hash: 8621969ea669a1b230ff2125a760ef66d575c48cb45e9e457f768909abcbda46
+- file: ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h
+  hash: 869640702d811c4c63abb52206715c891a93fd03be954df5ad40d378355af3d6
+- file: ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h
+  hash: 3d4e265d0aa42f888385ccf073666e6ebb5ec9f834760b9da27c474e177f708d
+- file: ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h
+  hash: f28119adbc81fb0e3c957c9aebe8fb423ad93634e76ead3caa2b0818d2e123ae
+- file: ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h
+  hash: 8cda7ac3ff6f0eb5e83c4fe613dd195151b24da54167f5c3c007e599a03f1edc
+- file: ../src/packs/CMSIS/CMSIS/Core/Include/core_cm7.h
+  hash: a361f5ff7b053831cdbbc068eae9609cd6681414c9a95c26df582d686a2378b8
+- file: ../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h
+  hash: de1b5eb9ed566527b66dc06f4ecb6a43ab6800f7dac47e87c9cb42984dca41bb
 - file: ../src/packs/PIC32CZ8110CA90208_DFP/component/ac.h
   hash: f9aa4d2da1321b56a267dac7ebef1c7435ba674e79609da7c54d79212d9389ff
 - file: ../src/packs/PIC32CZ8110CA90208_DFP/component/adc.h
